@@ -19,7 +19,7 @@ searchInputBtn.on('click', function() {
     })
     .then(locRes => {
       console.log(locRes);
-      if (locRes.length === 1) {
+      if (locRes.length === 0) {
         const cardDiv = $('<div>')
         const cardBodyDiv = $('<div>')
         const dateH2 = $('<h2>')
@@ -31,18 +31,15 @@ searchInputBtn.on('click', function() {
         cardDiv.append(cardBodyDiv)
         cardBodyDiv.append(dateH2)
       } else {
-        for (let i = 0; i < locRes.length; i++) {
-          if (locRes[i].country === 'US') {
-            const lat = locRes[i].lat;
-            const lon = locRes[i].lon;
+            const lat = locRes[0].lat;
+            const lon = locRes[0].lon;
             console.log(lat + '   ' + lon);
             forecastApiUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=8a3a661ef5387155c9e648d48ea692f7&units=imperial&limit=6';
             weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=8a3a661ef5387155c9e648d48ea692f7&units=imperial&limit=6';
             getForecast();
             getWeather();
-          }
-        }
       }
+
     })
     .catch(error => console.error('Error fetching geocode:', error));
 });
