@@ -5,7 +5,7 @@ https://mrdietcola.github.io/Challenge-6_Whether-app/
 ## Description
 This is a weather app that allows search a city and then the app displays the corresponding weather and 5 day forecast for that city.
 
-![Alt text](<Screenshot (14).png>)
+![Alt text](<Screenshot (15).png>)
 
 ## Installation
 
