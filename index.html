@@ -9,17 +9,21 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body class="vw-100">
-  <header>
-    <h1>Weather Dashboard</h1>
+  <header class="text-center bg-primary bg-gradient text-white p-2">
+    <h1 class="mar-0 p-3">Weather Dashboard</h1>
   </header>
 
   <div class="row vh-100 gx-0">
 
     <div class="card col-3 m-0 p-0">
-      <div class="card-body">
-        <h5 class="card-title">Search for a City:</h5>
-        <input id="search-input" class="form-input w-100" type="text" placeholder="City Name">
-        <a id="search-btn" href="#" class="btn btn-primary w-100 my-3">Search</a>
+      <div id="searches" class="card-body">
+        <div>
+          <h5 class="card-title">Search for a City:</h5>
+          <input id="search-input" class="form-input w-100" type="text" placeholder="City Name">
+          <a id="search-btn" href="#" class="btn btn-primary w-100 my-3">Search</a>
+        </div>
+        <div id="recent-searches" class="d-flex flex-column-reverse">
+        </div>
       </div>
     </div>
 
