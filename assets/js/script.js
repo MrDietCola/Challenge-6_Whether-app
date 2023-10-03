@@ -195,7 +195,6 @@ var weatherApiUrl;
 
 
 
-
 searchInputBtn.on('click', function() {
   var searchInput = $('#search-input').val()
   console.log(searchInput);
@@ -211,19 +210,32 @@ searchInputBtn.on('click', function() {
     humidity: []
   },
   {
-    question: "What is the tiny piece at the end of a shoelace called?",
-    choices: ["Aglet", "Turne", "Bean", "Stitch"],
-    answer: "Aglet"
+    date: '',
+    condition: [],
+    temps: [],
+    wind: [],
+    humidity: []
   },
   {
-    question: "What year did Facebook first launch?",
-    choices: ["2008", "2006", "2004", "2002"],
-    answer: "text 32"
+    date: '',
+    condition: [],
+    temps: [],
+    wind: [],
+    humidity: []
   },
   {
-    question: "What was the coffee shop called in the hit TV show Friends",
-    choices: ["Central Park", "Park Central", "Central Perk", "Downtown Coffee"],
-    answer: "Central Perk"
+    date: '',
+    condition: [],
+    temps: [],
+    wind: [],
+    humidity: []
+  },
+  {
+    date: '',
+    condition: [],
+    temps: [],
+    wind: [],
+    humidity: []
   }
   ]
     
@@ -247,7 +259,7 @@ searchInputBtn.on('click', function() {
         }
       }
     })
-  })
+})
 
 var temps = [];
 function getWeather() {
@@ -258,6 +270,28 @@ function getWeather() {
       }
     })
     .then(function (locRes) {
-      console.log(locRes);
-    })
+      console.log(locRes.list);
+      for (var i = 0; i < locRes.list.length; i+=8) {
+        console.log(dayjs(locRes.list[i].dt_txt).format('MM/DD/YYYY') + ' ' + locRes.list[i].main.temp + ' ' + locRes.list[i].weather[0].icon + ' ' + locRes.list[i].main.humidity + ' ' + locRes.list[i].wind.speed);
+        // create elements for weather day card
+        var cardDiv = $('<div>')
+        var cardBodyDiv = $('<div>')
+        var cityH2 = $('<p>')
+        var iconImg = $('<img>')
+        var tempP = $('<p>')
+        var windP = $('<p>')
+        var humidityP = $('<p>')
+        // create text value for each element
+        cityH2.text()
+        iconImg.src = 'http://openweathermap.org/img/w/$%7B' + locRes.list[i].weather[0].icon + '%7D.png';
+        iconImg.alt = 'weather icon';
+
+
+
+      }
+  })
 }
+
+
+// var dayData = data.list[i];
+// var date = dayjs(dayData.dt_txt).format('MM/DD/YYYY');
