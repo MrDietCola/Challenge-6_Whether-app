@@ -1,6 +1,6 @@
 # Challenge-6_Weather-app
 
-https://mrdietcola.github.io/Challenge-6_Whether-app/
+https://Seidler93.github.io/Challenge-6_Whether-app/
 
 ## Description
 This is a weather app that allows search a city and then the app displays the corresponding weather and 5 day forecast for that city.

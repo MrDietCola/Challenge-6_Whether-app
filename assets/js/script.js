@@ -1,6 +1,6 @@
 // creating base variables
 const searchInputBtn = $('#search-btn');
-localStorage.clear()
+// localStorage.clear()
 let weatherApiUrl;
 let forecastApiUrl;
 const storedSearches = JSON.parse(localStorage.getItem("searches")) || [];
